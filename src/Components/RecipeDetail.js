@@ -1,3 +1,4 @@
+// src/components/RecipeDetails.js
 import React from "react";
 
 const RecipeDetails = ({ recipe, onBack }) => {
