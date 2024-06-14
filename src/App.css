@@ -1,14 +1,45 @@
+body {
+  font-family: 'Lora', serif;
+  background-color: #fff5e1;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
 .App {
   text-align: center;
 }
+
+.recipe-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.loading,
+.error {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 50px;
+}
+
 /* src/Card.css */
 .card {
+  background-color: #f8f9fa;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 300px;
   margin: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card-image {
@@ -24,9 +55,11 @@
 .card-title {
   margin: 0;
   font-size: 1.5rem;
+  color: #b33030;
 }
 
 .card-description {
   font-size: 1rem;
   color: #555;
 }
+
