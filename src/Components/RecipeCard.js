@@ -1,17 +1,15 @@
 import React from "react";
 
-const RecipeCard = ({ recipe, onSelect }) => {
-  const { strMeal, strCategory, strMealThumb } = recipe;
-
+function RecipeCard({ title, image, description }) {
   return (
-    <div className="card" onClick={() => onSelect(recipe)}>
-      <img src={strMealThumb} alt={strMeal} className="card-image" />
-      <div className="card-body">
-        <span className="category">{strCategory}</span>
-        <h3>{strMeal}</h3>
+    <div className="card">
+      <img src={image} alt={title} className="card-image" />
+      <div className="card-content">
+        <h2 className="card-title">{title}</h2>
+        <p className="card-description">{description}</p>
       </div>
     </div>
   );
-};
+}
 
 export default RecipeCard;

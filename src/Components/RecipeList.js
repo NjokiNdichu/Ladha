@@ -1,14 +1,20 @@
 import React from "react";
 import RecipeCard from "./RecipeCard";
 
-const RecipeList = ({ recipes, onSelect }) => {
+function RecipeList({ recipes }) {
   return (
     <div className="recipe-list">
       {recipes.map((recipe) => (
-        <RecipeCard key={recipe.idMeal} recipe={recipe} onSelect={onSelect} />
+        <RecipeCard
+          key={recipe.idMeal}
+          title={recipe.strMeal}
+          image={recipe.strMealThumb}
+          
+        />
       ))}
     </div>
   );
-};
+}
 
 export default RecipeList;
+
