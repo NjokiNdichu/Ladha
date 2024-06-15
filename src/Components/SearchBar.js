@@ -1,8 +1,9 @@
+// src/components/SearchBar.js
 import React from "react";
 
 const SearchBar = ({ handleSubmit, query, isLoading, setQuery }) => {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="search-bar">
       <input
         value={query}
         className="form-control"

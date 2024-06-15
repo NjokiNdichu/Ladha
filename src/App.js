@@ -1,10 +1,13 @@
+// src/App.js
 import React, { useEffect, useState } from "react";
 import RecipeList from "./Components/RecipeList";
+import RecipeDetails from "./Components/RecipeDetail";
 import SearchBar from "./Components/SearchBar";
 import "./App.css";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -36,8 +39,16 @@ function App() {
     fetchRecipes(query);
   };
 
+  const handleSelectRecipe = (recipe) => {
+    setSelectedRecipe(recipe);
+  };
+
+  const handleBackToRecipes = () => {
+    setSelectedRecipe(null);
+  };
+
   return (
-    <div className="App">
+    <div className="app">
       <SearchBar 
         query={query}
         setQuery={setQuery}
@@ -46,7 +57,12 @@ function App() {
       />
       {loading && <div>Loading...</div>}
       {error && <div>Error: {error}</div>}
-      {!loading && !error && <RecipeList recipes={recipes} />}
+      {!loading && !error && !selectedRecipe && (
+        <RecipeList recipes={recipes} onSelect={handleSelectRecipe} />
+      )}
+      {!loading && !error && selectedRecipe && (
+        <RecipeDetails recipe={selectedRecipe} onBack={handleBackToRecipes} />
+      )}
     </div>
   );
 }
