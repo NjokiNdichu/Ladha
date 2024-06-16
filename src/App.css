@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #f4f4f9;
+  background-color: #ffe5cc; /* Light orange hue for the background */
 }
 
 .app {
@@ -53,8 +53,7 @@ button:hover {
 }
 
 .recipe-list,
-.favorite-recipes,
-.categories {
+.favorite-recipes {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -62,15 +61,30 @@ button:hover {
   gap: 20px;
 }
 
-.recipe-details img {
-  width: 100%;
+.recipe-details {
+  width: 60%; /* Reduced width */
+  background-color: white;
   border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+}
+
+
+
+
+.recipe-details img {
+  width: 80%; /* Smaller photo */
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
 }
 
 .recipe-details h2 {
   font-size: 2em;
   margin: 20px 0;
   text-align: center;
+  color: #ff8800; /* Orange color for the header */
 }
 
 .recipe-details p,
@@ -78,6 +92,7 @@ button:hover {
   font-size: 1em;
   line-height: 1.6;
   text-align: center;
+  color: #333333;
 }
 
 .recipe-details ul {
@@ -87,33 +102,6 @@ button:hover {
 
 .recipe-details ul li {
   margin: 5px 0;
-}
-
-.add-recipe-form {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.add-recipe-form label {
-  display: block;
-  margin: 10px 0;
-}
-
-.add-recipe-form input,
-.add-recipe-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.add-recipe-form button {
-  width: 100%;
-  padding: 15px;
-  font-size: 1em;
 }
 
 .header {
@@ -166,3 +154,43 @@ button:hover {
   cursor: not-allowed;
 }
 
+.search-bar {
+  margin-bottom: 20px; /* Space between search bar and list */
+}
+
+.favorite-recipes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.favorite-recipe-card {
+  width: 200px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.favorite-recipe-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.favorite-recipe-details {
+  padding: 10px;
+}
+
+.favorite-recipe-details h3 {
+  margin: 10px 0;
+}
+
+.favorite-recipe-details .category {
+  color: #a1a1a1;
+}
+
+.favorite-icon {
+  cursor: pointer;
+}
