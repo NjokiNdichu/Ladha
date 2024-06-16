@@ -1,6 +1,6 @@
 import React from "react";
 
-const RecipeDetails = ({ recipe, onBack }) => {
+const RecipeDetails = ({ recipe}) => {
   if (!recipe) {
     return <div>No recipe selected</div>;
   }
