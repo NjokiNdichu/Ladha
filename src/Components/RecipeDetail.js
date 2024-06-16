@@ -1,4 +1,3 @@
-// src/components/RecipeDetails.js
 import React from "react";
 
 const RecipeDetails = ({ recipe, onBack }) => {
@@ -8,7 +7,6 @@ const RecipeDetails = ({ recipe, onBack }) => {
 
   return (
     <div className="recipe-details">
-      <button onClick={onBack}>Back to Recipes</button>
       <img src={recipe.strMealThumb} alt={recipe.strMeal} className="recipe-image" />
       <h2 className="recipe-title">{recipe.strMeal}</h2>
       <p className="recipe-category"><strong>Category:</strong> {recipe.strCategory}</p>
@@ -17,17 +15,17 @@ const RecipeDetails = ({ recipe, onBack }) => {
       <p className="recipe-instructions">{recipe.strInstructions}</p>
       <h3>Ingredients</h3>
       <ul className="recipe-ingredients">
-        {Array.from({ length: 20 }, (_, i) => i + 1).map((index) => {
-          const ingredient = recipe[`strIngredient${index}`];
-          const measure = recipe[`strMeasure${index}`];
-          return (
-            ingredient && (
-              <li key={index}>
-                {ingredient} - {measure}
-              </li>
-            )
-          );
-        })}
+        {Array.from({ length: 20 }, (_, i) => i + 1)
+          .map((i) => ({
+            ingredient: recipe[`strIngredient${i}`],
+            measure: recipe[`strMeasure${i}`],
+          }))
+          .filter(({ ingredient }) => ingredient)
+          .map(({ ingredient, measure }, index) => (
+            <li key={index}>
+              {ingredient} - {measure}
+            </li>
+          ))}
       </ul>
     </div>
   );

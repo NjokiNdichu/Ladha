@@ -1,4 +1,3 @@
-// src/Components/Favorites.js
 import React from "react";
 import { FaHeart } from "react-icons/fa";
 
