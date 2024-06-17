@@ -7,7 +7,7 @@ function Header() {
   const handleRecipesClick = (e) => {
     e.preventDefault();
     navigate("/search");
-    window.location.reload(); // Reload the page to reset the view
+    window.location.reload(); 
   };
 
   return (

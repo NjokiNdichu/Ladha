@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #ffe5cc; /* Light orange hue for the background */
+  background-color: #ffe5cc; 
 }
 
 .app {
@@ -13,7 +13,7 @@ body {
 }
 
 button {
-  background-color: #ffa500; /* Orange color */
+  background-color: #ffa500;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -62,7 +62,7 @@ button:hover {
 }
 
 .recipe-details {
-  width: 60%; /* Reduced width */
+  width: 60%;
   background-color: white;
   border-radius: 10px;
   padding: 20px;
@@ -81,7 +81,7 @@ button:hover {
   font-size: 2em;
   margin: 20px 0;
   text-align: center;
-  color: #ff8800; /* Orange color for the header */
+  color: #ff8800; 
 }
 
 .recipe-details p,
@@ -152,7 +152,7 @@ button:hover {
 }
 
 .search-bar {
-  margin-bottom: 20px; /* Space between search bar and list */
+  margin-bottom: 20px; 
 }
 
 .favorite-recipes {
@@ -201,7 +201,7 @@ button:hover {
 .home-container {
   text-align: center;
   padding: 20px;
-  background-color: #ffe5cc; /* Matching the overall theme */
+  background-color: #ffe5cc; 
 }
 
 .home-container h1 {
