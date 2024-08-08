@@ -1,7 +1,8 @@
 import React from "react";
-import { FaHeart, FaRegHeart } from "react-icons/fa"; // Import heart icons
+import { FaHeart, FaRegHeart } from "react-icons/fa";
+import Rating from "./Rating";
 
-const RecipeCard = ({ recipe, onSelect, onToggleFavorite, isFavorite }) => {
+const RecipeCard = ({ recipe, onSelect, onToggleFavorite, isFavorite, onRate }) => {
   const { strMeal, strCategory, strMealThumb } = recipe;
 
   return (
@@ -21,6 +22,11 @@ const RecipeCard = ({ recipe, onSelect, onToggleFavorite, isFavorite }) => {
         >
           {isFavorite ? <FaHeart color="red" /> : <FaRegHeart />}
         </div>
+        <Rating
+          recipeId={recipe.idMeal}
+          currentRating={recipe.rating || 0}
+          onRate={onRate}
+        />
       </div>
     </div>
   );
